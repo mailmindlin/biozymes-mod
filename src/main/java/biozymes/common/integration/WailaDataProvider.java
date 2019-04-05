@@ -52,8 +52,6 @@ public class WailaDataProvider implements IWailaDataProvider {
 		if (tile instanceof IWailaTile) {
 			IWailaTile te = (IWailaTile) tile;
 			te.getWailaHead(currentTip, itemStack, accessor.getPlayer(), accessor.getWorld(), accessor.getPosition());
-		} else {
-			currentTip.set(0, currentTip.get(0) + "foo");
 		}
 		
 		return currentTip;
@@ -72,7 +70,7 @@ public class WailaDataProvider implements IWailaDataProvider {
 			BlockCropCorn corn = (BlockCropCorn) accessor.getBlock();
 			int age = corn.getAge(accessor.getBlockState());
 			int maxAge = corn.getMaxAge();
-			currentTip.add(String.format("Growth : %.0f (%d/%d)", ((float) age) / maxAge, age, maxAge));
+			currentTip.add(String.format("Growth : %.0f%%", 100.0f * ((float) age) / maxAge));
 		}
 		
 		return currentTip;

@@ -62,7 +62,7 @@ public abstract class BlockCropBase extends BlockBush implements IBZBlock, IGrow
 	
 	protected IBlockState withAge(int age) {
 		return this.getDefaultState()
-				.withProperty(this.getAgeProperty(), (Integer) 0);
+				.withProperty(this.getAgeProperty(), (Integer) age);
 	}
 	
 	protected boolean isMaxAge(IBlockState state) {
