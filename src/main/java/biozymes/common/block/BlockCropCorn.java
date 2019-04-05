@@ -15,7 +15,7 @@ public class BlockCropCorn extends BlockCropBase {
 	public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 3);
 
 	public BlockCropCorn() {
-		super("blockCorn");
+		super("cropCorn");
 		
 	}
 
@@ -32,11 +32,6 @@ public class BlockCropCorn extends BlockCropBase {
 	@Override
 	public int getMetaFromState(IBlockState state) {
 		return this.getAge(state);
-	}
-
-	@Override
-	public String getName() {
-		return "cropCorn";
 	}
 
 	@Override
