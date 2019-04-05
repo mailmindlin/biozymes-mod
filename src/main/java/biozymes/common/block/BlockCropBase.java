@@ -95,7 +95,15 @@ public abstract class BlockCropBase extends BlockBush implements IBZBlock, IGrow
 		super.updateTick(worldIn, pos, state, rand);
 		
 		if (worldIn.getLightFromNeighbors(pos) >= this.getMinLight()) {
-			
+			int age = this.getAge(state);
+			if (age < this.getMaxAge()) {
+				float f = this.getGrowthChance();
+				
+				if (ForgeHooks.onCropsGrowPre(worldIn, pos, state, rand.nextInt((int)(25.0F / f) + 1) == 0)) {
+					worldIn.setBlockState(pos, this.withAge(age + 1), 2);
+	                ForgeHooks.onCropsGrowPost(worldIn, pos, state, worldIn.getBlockState(pos));
+				}
+			}
 		}
 	}
 
