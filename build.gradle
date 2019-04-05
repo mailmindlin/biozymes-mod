@@ -59,7 +59,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 	//deobfCompile "mcp.mobius.waila:Hwyla:${hwyla_version}"
-	deobfCompile file("libs/Hwyla-1.8.17-B31_1.10.2.jar")
+	// deobfCompile file("libs/Hwyla-1.8.17-B31_1.10.2.jar")
 }
 
 processResources
