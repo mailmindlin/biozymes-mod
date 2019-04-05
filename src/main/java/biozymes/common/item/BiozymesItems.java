@@ -8,10 +8,10 @@ import net.minecraftforge.fml.common.registry.IForgeRegistry;
 
 @ObjectHolder("biozymes")
 public class BiozymesItems {
-	ItemCornCob corn = new ItemCornCob();
+	public static ItemCornCob ingotCorn = new ItemCornCob();
 	
 	public static void registerItems(IForgeRegistry<Item> registry) {
-		
+		registry.register(init(ingotCorn, "ingotCorn"));
 	}
 	
 	public static Item init(Item item, String name) {

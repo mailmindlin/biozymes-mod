@@ -57,7 +57,7 @@ public class ItemCornCob extends ItemFood implements IBZItem, IPlantable {
 
 	@Override
 	public IBlockState getPlant(IBlockAccess world, BlockPos pos) {
-		return BiozymesBlocks.cropCorn.getDefaultState();
+		return BiozymesBlocks.blockCorn.getDefaultState();
 	}
 
 	@Override

@@ -6,7 +6,9 @@ import net.minecraft.block.BlockBush;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -22,7 +24,7 @@ public abstract class BlockCropBase extends BlockBush implements IBZBlock, IGrow
 		this.name = name;
 
 		this.setDefaultState(this.blockState.getBaseState()
-				.withProperty(this.getAgeProperty(), (Integer) 0));
+				.withProperty(this.getAgeProperty(), Integer.valueOf(0)));
 		
 		this.setTickRandomly(true);
 		this.setCreativeTab(null);
@@ -95,5 +97,10 @@ public abstract class BlockCropBase extends BlockBush implements IBZBlock, IGrow
 		if (worldIn.getLightFromNeighbors(pos) >= this.getMinLight()) {
 			
 		}
+	}
+
+	@Override
+	protected BlockStateContainer createBlockState() {
+		return new BlockStateContainer(this, new IProperty[] { this.getAgeProperty() });
 	}
 }

@@ -12,12 +12,12 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 import net.minecraftforge.fml.common.registry.IForgeRegistry;
 
-@ObjectHolder(Biozymes.MODID)
+//@ObjectHolder(Biozymes.MODID)
 public class BiozymesBlocks {
-	public static BlockCropCorn cropCorn = new BlockCropCorn();
+	public static BlockCropCorn blockCorn = new BlockCropCorn();
 	
 	static List<IBZBlock> getBlocks() {
-		return Arrays.asList(cropCorn);
+		return Arrays.asList(blockCorn);
 	}
 	
 	public static void registerBlocks(IForgeRegistry<Block> registry) {
