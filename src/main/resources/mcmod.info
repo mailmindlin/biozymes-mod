@@ -1,0 +1,16 @@
+[
+{
+  "modid": "biozymes",
+  "name": "Biozymes",
+  "description": "You might not get your money back.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["mailmindlin"],
+  "credits": "Various people",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

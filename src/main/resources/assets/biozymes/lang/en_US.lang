@@ -1,0 +1,21 @@
+# Alleles
+
+
+# Items
+item.ingotCopper.name=Copper Ingot
+item.entropyMeter.name=Entropy Meter
+
+# Blocks
+tile.oreCopper.name=Copper Ore
+tile.machineEntropicDestructinator.name=Entropic Destructinator
+tile.blockEntropicIlluminator.name=Entropic Illuminator
+tile.blockEntropicInsulation.name=Entropic Insulation
+tile.machineAnalyzer.name=Analyzer
+
+# Commands
+command.base.usage=/ue
+command.version.usage=/ue version
+command.getentropy.usage=/ue getEntropy
+command.getflavor.usage=/ue aspect
+command.addentropy.usage=/ue addEntropy <entropy> [x] [y] [z]
+command.setentropy.usage=/ue setEntropy <entropy> [x] [y] [z]
