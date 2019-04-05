@@ -17,6 +17,9 @@ public class BiozymesItems {
 	public static Item init(Item item, String name) {
 		item.setUnlocalizedName(name);
 		item.setRegistryName(new ResourceLocation(Biozymes.MODID, name));
+		if (item instanceof IBZItem)
+			((IBZItem) item).registerItemModel();
+		
 		return item;
 	}
 }

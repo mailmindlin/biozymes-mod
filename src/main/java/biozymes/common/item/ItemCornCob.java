@@ -62,7 +62,7 @@ public class ItemCornCob extends ItemFood implements IBZItem, IPlantable {
 
 	@Override
 	public String getName() {
-		return "corn";
+		return "ingotCorn";
 	}
 	
 }
