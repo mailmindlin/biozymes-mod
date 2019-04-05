@@ -1,0 +1,20 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all",
+		"textures": {
+			"all": "biozymes:blocks/blockEntropicIlluminator"
+		},
+		"uvlock": true
+	},
+	"variants": {
+		"normal": [{}],
+		"inventory": [{}],
+		"age=0": {
+			"all": "biozymes:blocks/blockCropCorn0"
+		},
+		"age=1": {},
+		"age=2": {},
+		"age=3": {}
+	}
+}
