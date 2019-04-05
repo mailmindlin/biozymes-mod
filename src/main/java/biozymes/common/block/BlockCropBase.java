@@ -56,7 +56,7 @@ public abstract class BlockCropBase extends BlockBush implements IBZBlock, IGrow
 		return 9;
 	}
 	
-	protected int getAge(IBlockState state) {
+	public int getAge(IBlockState state) {
 		return state.getValue(this.getAgeProperty()).intValue();
 	}
 	
@@ -68,7 +68,7 @@ public abstract class BlockCropBase extends BlockBush implements IBZBlock, IGrow
 	protected boolean isMaxAge(IBlockState state) {
 		return this.getAge(state) >= this.getMaxAge();
 	}
-
+	
 	@Override
 	public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
 		// TODO Auto-generated method stub

@@ -1,8 +1,10 @@
-package biozymes.common.integration.waila;
+package biozymes.common.integration;
 
 import java.util.List;
 
-import biozymes.common.integration.BiozymesHooks;
+import biozymes.common.Biozymes;
+import biozymes.common.block.BiozymesBlocks;
+import biozymes.common.block.BlockCropCorn;
 import biozymes.common.tile.IWailaTile;
 import biozymes.common.tile.TECrop;
 import biozymes.common.tile.TEIncubator;
@@ -24,7 +26,10 @@ public class WailaDataProvider implements IWailaDataProvider {
 	
 	@Method(modid = BiozymesHooks.WAILA_MOD_ID)
 	public static void register(IWailaRegistrar registrar) {
+		Biozymes.logger.warn("Registering waila");
 		WailaDataProvider provider = new WailaDataProvider();
+		
+		registrar.registerBodyProvider(provider, BlockCropCorn.class);
 		
 		registrar.registerHeadProvider(provider, TECrop.class);
 		registrar.registerBodyProvider(provider, TECrop.class);
@@ -47,6 +52,8 @@ public class WailaDataProvider implements IWailaDataProvider {
 		if (tile instanceof IWailaTile) {
 			IWailaTile te = (IWailaTile) tile;
 			te.getWailaHead(currentTip, itemStack, accessor.getPlayer(), accessor.getWorld(), accessor.getPosition());
+		} else {
+			currentTip.set(0, currentTip.get(0) + "foo");
 		}
 		
 		return currentTip;
@@ -60,6 +67,12 @@ public class WailaDataProvider implements IWailaDataProvider {
 		if (tile instanceof IWailaTile) {
 			IWailaTile te = (IWailaTile) tile;
 			te.getWailaBody(currentTip, itemStack, accessor.getPlayer(), accessor.getWorld(), accessor.getPosition());
+		} else if (accessor.getBlock() == BiozymesBlocks.blockCorn) {
+			// Add growh
+			BlockCropCorn corn = (BlockCropCorn) accessor.getBlock();
+			int age = corn.getAge(accessor.getBlockState());
+			int maxAge = corn.getMaxAge();
+			currentTip.add(String.format("Growth : %.0f (%d/%d)", ((float) age) / maxAge, age, maxAge));
 		}
 		
 		return currentTip;

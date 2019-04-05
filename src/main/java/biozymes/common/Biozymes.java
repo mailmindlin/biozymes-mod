@@ -36,6 +36,7 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 @Mod(
 		modid = Biozymes.MODID,
 		version = Biozymes.VERSION,
+		useMetadata = true,
 		dependencies = "after:mekanism;"
 						//+ "after:ic2;"
 						+ "after:jei")
@@ -98,6 +99,7 @@ public class Biozymes {
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
+		logger.info("Initializing Biozymes mod...");
 		// some example code
 		BZRecipes.init();
 		
